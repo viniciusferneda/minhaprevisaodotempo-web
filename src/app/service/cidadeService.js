@@ -35,7 +35,7 @@ export default class CidadeService extends ApiService {
     consultar(cidadeFiltro){
         let params = `?name=${cidadeFiltro.name}`;
 
-        if(lancamentoFiltro.country){
+        if(cidadeFiltro.country){
             params = `${params}&country=${cidadeFiltro.country}`;
         }
 
