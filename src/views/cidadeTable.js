@@ -12,7 +12,7 @@ export default props => {
                 <td>
                     <button type="button" title="Detalhar"
                             className="btn btn-primary"
-                            onClick={e => props.detailAction(cidade)}>
+                            onClick={e => props.detailAction(cidade.id)}>
                         <i className="pi pi-search"></i>
                     </button>
                     <button type="button" title="Deletar"

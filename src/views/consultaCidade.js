@@ -22,13 +22,12 @@ class ConsultaCidade extends React.Component{
         this.service = new CidadeService();
     }
 
-    detalhar = (cidade) => {
-        const cidadeFiltro = {
-            id: cidade.id
-        }
+    componentDidMount(){
+        const params = this.props.match.params;
 
-        this.service
-            .detalhar(cidadeFiltro.id)
+        if(params.id){
+            this.service
+            .detalhar(params.id)
             .then(response => {
                 const lista = response.data;
                 if(lista.length < 1){
@@ -39,9 +38,10 @@ class ConsultaCidade extends React.Component{
             .catch(error => {
                 console.log(error);
             })
+        }
     }
 
-    preparaFormularioCadastro = () => {
+    voltar = () => {
         this.props.history.push('/cadastro-cidade');
     }
 

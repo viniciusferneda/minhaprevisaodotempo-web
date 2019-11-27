@@ -84,8 +84,8 @@ class CadastroCidade extends React.Component {
             });
     }
 
-    detalhar = (cidade) => {
-        this.props.history.push('/consulta-cidade');
+    detalhar = (id) => {
+        this.props.history.push(`/consulta-cidade/${id}`);
     }
 
     render(){
