@@ -33,13 +33,33 @@ export default class CidadeService extends ApiService {
     }
 
     consultar(cidadeFiltro){
-        let params = `?name=${cidadeFiltro.name}`;
+        let params = '';
+
+        if(cidadeFiltro.id){
+            params = `?id=${cidadeFiltro.id}`;
+        }
+
+        if(cidadeFiltro.name){
+            if(params){
+                params = `?name=${cidadeFiltro.name}`;
+            }else{
+                params = `${params}&name=${cidadeFiltro.name}`;
+            }
+        }
 
         if(cidadeFiltro.country){
-            params = `${params}&country=${cidadeFiltro.country}`;
+            if(params){
+                params = `?country=${cidadeFiltro.country}`;
+            }else {
+                params = `${params}&country=${cidadeFiltro.country}`;
+            }
         }
 
         return this.get(params);
+    }
+
+    detalhar(idCidade){
+        return this.get(`${idCidade}/detalhar`);
     }
 
     deletar(id){
