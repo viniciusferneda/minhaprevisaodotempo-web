@@ -40,11 +40,10 @@ class CadastroCidade extends React.Component {
             .salvar(cidade)
             .then(response => {
                 messages.mensagemSucesso('Cidade cadastrada com sucesso!');
+                this.buscar();
             }).catch(error => {
                 messages.mensagemErro(error.response.data);
             });
-        
-        this.buscar();
     }
 
     handleChange = (event) => {

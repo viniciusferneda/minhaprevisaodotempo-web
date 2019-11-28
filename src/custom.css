@@ -3,3 +3,11 @@ body{padding-top:120px}pre{background:#f7f7f9}@media (min-width: 768px){body>.na
 .btn {
     margin-right: 5px;
 }
+
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    justify-content: center;
+}

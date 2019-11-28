@@ -22,7 +22,7 @@ function Rotas(props){
             <Switch>                
                 <RouteRedirect exact path="/" component={Home}/>
                 <Route exact path="/cadastro-cidade" component={CadastroCidade}/>
-                <Route exact path="/consulta-cidade" component={ConsultaCidade}/>                
+                <Route exact path="/consulta-cidade/:id?" component={ConsultaCidade}/>                
             </Switch>
         </HashRouter>
     )

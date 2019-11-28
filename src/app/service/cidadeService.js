@@ -59,7 +59,7 @@ export default class CidadeService extends ApiService {
     }
 
     detalhar(idCidade){
-        return this.get(`${idCidade}/detalhar`);
+        return this.get(`/${idCidade}/detalhar`);
     }
 
     deletar(id){
